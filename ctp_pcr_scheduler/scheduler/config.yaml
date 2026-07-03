@@ -1,0 +1,78 @@
+# CTP PCR Scheduler — configuration
+# Paths are relative to the package root (the folder containing scheduler/ and inputs/).
+inputs:
+  drum: inputs/curing_schedule.xlsx     # the curing plan (demand signal / pinned drum)
+  bom: inputs/bom.csv
+  routing: inputs/routing.csv
+  aging: inputs/aging_master.csv
+  itemtype: inputs/itemtype_master.csv
+  buffer: inputs/buffer_master.csv
+  mpq: inputs/mpq.xlsx
+  transfer: inputs/transfer_time.xlsx
+outputs_dir: outputs
+outputs2_dir: outputs
+
+mode:
+  enforce_commit_test: false
+  enforce_strict_horizon: false
+  drum_immutable: true
+
+# Slice: which SKUs to schedule. enabled+only_skus pins to specific SKUs;
+# enabled+max_skus keeps the top-N by demand; enabled:false schedules ALL SKUs.
+slice:
+  enabled: true
+  max_skus: 1
+  one_wave_only: false
+  only_skus:
+  - 1325215813079TUNE3
+
+timezone: Asia/Kolkata
+plant_day_start_hour: 7
+wave_duration_days: 3
+pre_curing_buffer_h: 2.0
+schedule_open_lead_h: 96.0
+produce_to_demand: true            # make-to-demand; MPQ not used to pad qty up
+max_lot_duration_h: 8.0
+max_sub_lots: 50
+bucket_safety_h: 6.0
+green_tyre_cure_by_h: 8.0
+oee: 1.0
+efficiency_override: 1.0
+cure_min_band:
+- 10.0
+- 30.0
+
+# pooled batching window: <1 tightens compound/component batches below raw shelf life.
+# 0.2 = near-JIT (best aging, single-SKU); 0.8 = pooled (multi-SKU, fewer batches).
+pooled_window_factor: 0.2
+
+# length-basis fix (cap-ply slitter): time a slitter/cutter on the length it FEEDS, not
+# the developed output. Fires only where output/input length ratio >= this value.
+length_input_min_ratio: 2.0
+
+no_aest_item_types:
+- MASTER COMPOUND
+- FINAL COMPOUND
+
+changeover_min:
+  default: 15.0
+  mixing: 2.0
+  4 Roll Calender: 44.0
+  Roller Head Calender: 25.5
+  Triplex Extruder: 22.5
+  Quintoplex Extruder: 23.71
+  Ply Cutter: 6.0
+  Belt Cutter: 6.0
+  Building: 0.0
+  Carcass Building (1st Stage): 0.0
+
+planning_max_aging_h:
+  MASTER COMPOUND: 360.0
+  FINAL COMPOUND: 120.0
+  CALANDARED ROLL: 72.0
+  Inner Liner: 72.0
+  Tread: 72.0
+  SideWall: 72.0
+  Steel Belt: 24.0
+  Ply: 24.0
+  Bead Apex: 72.0

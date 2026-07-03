@@ -1,0 +1,69 @@
+{
+  "verdict": "PASS",
+  "mode": "BTP-MODE (warn-only)",
+  "n_fail": 0,
+  "n_warn": 2,
+  "findings": [
+    {
+      "severity": "INFO",
+      "check": "curing_cure_min_band",
+      "count": 0,
+      "detail": "productive blocks with cure_min outside [10.0,30.0] min"
+    },
+    {
+      "severity": "INFO",
+      "check": "press_universe",
+      "count": 0,
+      "detail": "non-numeric press tokens: []"
+    },
+    {
+      "severity": "WARN",
+      "check": "sku_crosswalk",
+      "count": 31,
+      "detail": "plan SKUs not in BOM (cannot explode): ['1225119Z15008SXC10', '1225215Z12008RXC10', '1225219Z15008SXC11', '1325214617107MSXT0', '1325214812074TUHL0', '1325215513073TUNE0', '1325215514075TUNE0', '1325215813079TUNE5', '1325216612077TUSP0', '1325216613079HUNE0', '1325217515084HURL2', '1325218316083HURL0', '1325218614088TTMX0', '1325219515091HURL2', '1325221317094VURL0', '1325221318095HURL0', '1325221417096HURL0', '1325221715100SRAT0', '1325223517104TRXT0', '1325223616105TRAT0', '1325224716111SELS0', '1325225518111HRHB0', '1D25114012008QXPC0', '1D25118014010RXPC0', '1D25214012008QXPCM', '1D25214012008QXPCT', '1D25215013008SXC10', '1D25215013008SXC1T', '1D25216814008QXPC0', '1D25218014010RXPCT', '1D25218Z14008QXPC0']"
+    },
+    {
+      "severity": "WARN",
+      "check": "mpq_coverage",
+      "count": 9,
+      "detail": "produced types with no MPQ row: ['Bead Wire', 'Carbon black', 'Natural rubber', 'Nylon fabric', 'Process oil', 'SMALL CHEMICAL', 'Steel Belt Edge Strip', 'Steel tyre cord', 'Synthetic rubber']"
+    },
+    {
+      "severity": "INFO",
+      "check": "produced_item_missing_routing",
+      "count": 0,
+      "detail": "produced intermediates with NO routing op (silently unscheduled, their assemblies build without them): []"
+    },
+    {
+      "severity": "INFO",
+      "check": "bom_missing_child_quantity",
+      "count": 0,
+      "detail": "produced items with NaN child_quantity (silently zero-demanded, orphan their consumers): []"
+    },
+    {
+      "severity": "INFO",
+      "check": "nos_subassembly_underexplosion",
+      "count": 0,
+      "detail": "NOS children possibly under-exploded vs parent count (confirm bead-room convention; not auto-multiplied): []"
+    },
+    {
+      "severity": "INFO",
+      "check": "drum_press_not_authorised",
+      "count": 0,
+      "detail": "drum CURING press not in routing op-200 machine list (phantom/unauthorised press): []"
+    },
+    {
+      "severity": "INFO",
+      "check": "aging_min_gt_max",
+      "count": 0,
+      "detail": "codes with MinAging > MaxAging: []"
+    },
+    {
+      "severity": "INFO",
+      "check": "green_tyre_cureby",
+      "count": 0,
+      "detail": "GREEN_TYRE codes not pinned to 8.0h: 0"
+    }
+  ],
+  "green_tyre_codes": 11
+}

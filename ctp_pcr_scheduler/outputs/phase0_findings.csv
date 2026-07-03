@@ -1,0 +1,11 @@
+severity,check,count,detail
+INFO,curing_cure_min_band,0,"productive blocks with cure_min outside [10.0,30.0] min"
+INFO,press_universe,0,non-numeric press tokens: []
+WARN,sku_crosswalk,31,"plan SKUs not in BOM (cannot explode): ['1225119Z15008SXC10', '1225215Z12008RXC10', '1225219Z15008SXC11', '1325214617107MSXT0', '1325214812074TUHL0', '1325215513073TUNE0', '1325215514075TUNE0', '1325215813079TUNE5', '1325216612077TUSP0', '1325216613079HUNE0', '1325217515084HURL2', '1325218316083HURL0', '1325218614088TTMX0', '1325219515091HURL2', '1325221317094VURL0', '1325221318095HURL0', '1325221417096HURL0', '1325221715100SRAT0', '1325223517104TRXT0', '1325223616105TRAT0', '1325224716111SELS0', '1325225518111HRHB0', '1D25114012008QXPC0', '1D25118014010RXPC0', '1D25214012008QXPCM', '1D25214012008QXPCT', '1D25215013008SXC10', '1D25215013008SXC1T', '1D25216814008QXPC0', '1D25218014010RXPCT', '1D25218Z14008QXPC0']"
+WARN,mpq_coverage,9,"produced types with no MPQ row: ['Bead Wire', 'Carbon black', 'Natural rubber', 'Nylon fabric', 'Process oil', 'SMALL CHEMICAL', 'Steel Belt Edge Strip', 'Steel tyre cord', 'Synthetic rubber']"
+INFO,produced_item_missing_routing,0,"produced intermediates with NO routing op (silently unscheduled, their assemblies build without them): []"
+INFO,bom_missing_child_quantity,0,"produced items with NaN child_quantity (silently zero-demanded, orphan their consumers): []"
+INFO,nos_subassembly_underexplosion,0,NOS children possibly under-exploded vs parent count (confirm bead-room convention; not auto-multiplied): []
+INFO,drum_press_not_authorised,0,drum CURING press not in routing op-200 machine list (phantom/unauthorised press): []
+INFO,aging_min_gt_max,0,codes with MinAging > MaxAging: []
+INFO,green_tyre_cureby,0,GREEN_TYRE codes not pinned to 8.0h: 0

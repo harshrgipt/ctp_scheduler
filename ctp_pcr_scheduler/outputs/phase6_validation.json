@@ -1,0 +1,9 @@
+{
+  "C1_precedence_violations": 0,
+  "C4_overlap_violations": 0,
+  "C2_silent_breaks": 0,
+  "C3_orphan_outputs": 0,
+  "C3_orphan_sample": [],
+  "C7_acyclic": true,
+  "verdict": "CLEAN"
+}

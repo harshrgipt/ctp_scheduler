@@ -1,0 +1,2 @@
+producer_lot,consumer_lot,item,gap_h,min_aging_h,max_aging_h,type,delta_h
+L001362,L001481,S53,123.6376190475,4.0,120.0,OVER_AGED,3.6376190475
